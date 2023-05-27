@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <style>
+        /* Header styles */
+        .header {
+            background-color: #0055a4; /* Set the background color */
+            color: white; /* Set the text color */
+            padding: 20px; /* Add some padding */
+            text-align: center; /* Center the text */
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        body {
+            background-image: url({{ url_for('static', filename='images/background.gif') }});
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: left;
+        }
+        h1 {text-align: center;}
+
+        /* Form styles */
+        form {
+            margin: 20px auto; /* Center the form */
+            max-width: 500px; /* Set a maximum width */
+            padding: 20px; /* Add some padding */
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        /* Input styles */
+        input {
+            display: block; /* Display the inputs as block elements */
+            margin: 10px 0; /* Add some margin */
+            padding: 10px; /* Add some padding */
+            width: 100%; /* Set the width to 100% */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Submit button styles */
+        input[type="submit"] {
+            background-color: #4CAF50; /* Set the background color */
+            border: black; /* Remove the border */
+            color: white; /* Set the text color */
+            cursor: pointer; /* Add a pointer cursor on hover */
+            padding: 10px; /* Add some padding */
+            text-align: center; /* Center the text */
+            text-decoration: none; /* Remove text decoration */
+            width: 100%; /* Set the width to 100% */
+            border-radius: 5px;
+        }
+                /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{ title}}</h1>
+        <h5>{{message}}</h5>
+    </div>
+
+    <form action="/submit" method="POST">
+        <label for="first_name">First name:</label>
+        <input type="text" name="first_name" id="first_name">
+
+        <label for="last_name">Last name:</label>
+        <input type="text" name="last_name" id="last_name">
+
+        <label for="email">Email:</label>
+        <input type="email" name="email ot mobile number" id="email">
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
